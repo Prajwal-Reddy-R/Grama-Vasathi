@@ -1,0 +1,59 @@
+# Android Studio / IntelliJ
+*.iml
+*.ipr
+*.iws
+/.idea/
+.gradle/
+.kotlin/
+
+# Gradle
+/build/
+**/build/
+
+# Local configuration files
+/local.properties
+**/local.properties
+
+# Keystore files
+*.jks
+*.keystore
+
+# Signing files
+*.pem
+*.p12
+
+# IntelliJ project files
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+
+# Android Studio captures
+/captures
+**/captures
+
+# NDK & external builds
+.externalNativeBuild/
+.cxx/
+
+# Logs
+*.log
+
+# Build outputs
+*.apk
+*.ap_
+*.aab
+*.hprof
+*.dex
+*.class
+
+# Misc
+.DS_Store
+Thumbs.db
+
+# Crashlytics
+crashlytics.properties
+
+/app/google-services.json

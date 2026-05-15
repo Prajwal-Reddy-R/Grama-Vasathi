@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ग्राम-वसती</string>
+    <string name="role_host">होस्ट</string>
+    <string name="role_guest">अतिथि</string>
+    <string name="checklist_title">तैयारी जाँच</string>
+    <string name="guest_home_title">फार्म स्टे खोजें</string>
+    <string name="book_now">अभी बुक करें</string>
+    <string name="submit_review">समीक्षा जमा करें</string>
+    <string name="cultural_guide_title">सांस्कृतिक मार्गदर्शिका</string>
+    <string name="settings">सेटिंग्स</string>
+    <string name="wishlist">पसंदीदा स्टे</string>
+    <string name="my_bookings">मेरी बुकिंग</string>
+    <string name="publish_listing">लिस्टिंग प्रकाशित करें</string>
+    <string name="score">तैयारी स्कोर</string>
+    <string name="login">लॉगिन</string>
+    <string name="register">पंजीकरण</string>
+    <string name="logout">लॉगआउट</string>
+    <string name="host_dashboard">होस्ट डैशबोर्ड</string>
+    <string name="guest_home">होम</string>
+    <string name="cultural_guide">सांस्कृतिक मार्गदर्शिका</string>
+    <string name="impact_dashboard">प्रभाव</string>
+    <string name="wishlist_empty">अभी तक कोई पसंदीदा नहीं</string>
+    <string name="no_bookings">अभी तक कोई बुकिंग नहीं</string>
+</resources>

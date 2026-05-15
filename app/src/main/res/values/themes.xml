@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Use Theme.AppCompat when using AppCompatActivity to prevent System UI lags -->
+    <style name="Theme.Sample" parent="Theme.AppCompat.DayNight.NoActionBar" />
+</resources>
