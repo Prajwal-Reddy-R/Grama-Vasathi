@@ -81,8 +81,35 @@ Grama-Vasathi is a mobile platform designed to bridge the gap between rural Karn
 ---
 
 ## 📸 Screenshots
-*(Placeholders for screenshots)*
-- **Home Screen:** Discovery feed with Experience Tags.
-- **Readiness Score:** The Host's checklist and dynamic score UI.
-- **Property Detail:** Comprehensive view of a rural stay.
-- **Kannada UI:** The app running in regional language support.
+
+### Home and discovery
+![Home Page 1](screenshots/Home_Page1.png)
+![Home Page 2](screenshots/Home_Page2.png)
+![Mail Authentication](screenshots/Mail_Authentication.png)
+
+### Guest experience
+![Guest Login Page](screenshots/Guest_Login_Page.png)
+![Guest Screen](screenshots/Guest_Screen.png)
+![Stay Details](screenshots/Stay_Details.png)
+![Guest Guidance](screenshots/Guest_Guidance.png)
+![Book Your Stay](screenshots/Book_your_Stay.png)
+![Reservation Confirmed](screenshots/Reservation_Confirmed.png)
+![Booking List](screenshots/Booking_List.png)
+![Watchlist](screenshots/WatchList.png)
+![Platform Status](screenshots/Platform_status.png)
+
+### Host experience
+![Host Login Page](screenshots/Host_Login_Page.png)
+![Host Screen 1](screenshots/Host_screen1.png)
+![Host Screen 2](screenshots/Host_screen2.png)
+![Host Guidance Section 1](screenshots/Host_Guidance_Section1.png)
+![Host Guidance Section 2](screenshots/Host_Guidance_Section2.png)
+![Stay Adding Form](screenshots/Stay_Adding_form.png)
+![Readiness Checklist](screenshots/Readiness_Checklist.png)
+![Readiness Score](screenshots/Readiness_Score.png)
+![Stay Published](screenshots/Stay_Published.png)
+
+### Readiness and support
+![Language Conversion](screenshots/Language_Conversion.png)
+
+
