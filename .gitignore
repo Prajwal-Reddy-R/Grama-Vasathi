@@ -38,6 +38,8 @@
 .externalNativeBuild/
 .cxx/
 
+gradle/gradle-daemon-jvm.properties
+
 # Logs
 *.log
 

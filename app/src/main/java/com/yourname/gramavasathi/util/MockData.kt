@@ -1,8 +1,14 @@
 package com.yourname.gramavasathi.util
 
+import com.google.firebase.Timestamp
 import com.yourname.gramavasathi.data.model.Listing
+import java.util.Calendar
 
 object MockData {
+    private val pastDate = Calendar.getInstance().apply {
+        set(2023, 0, 1)
+    }.time
+
     val listings = listOf(
         Listing(
             id = "mock_1",
@@ -21,7 +27,8 @@ object MockData {
             badges = listOf("verified_hygiene", "top_host", "family_friendly"),
             district = "Chikkaballapura",
             isPublished = true,
-            imageUrls = listOf("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80")
+            imageUrls = listOf("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"),
+            createdAt = Timestamp(pastDate)
         ),
         Listing(
             id = "mock_2",
@@ -40,7 +47,8 @@ object MockData {
             badges = listOf("verified_hygiene", "top_host"),
             district = "Kodagu",
             isPublished = true,
-            imageUrls = listOf("https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=800&q=80")
+            imageUrls = listOf("https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=800&q=80"),
+            createdAt = Timestamp(pastDate)
         ),
         Listing(
             id = "mock_3",
@@ -59,7 +67,8 @@ object MockData {
             badges = listOf("home_cooked_food"),
             district = "Mandya",
             isPublished = true,
-            imageUrls = listOf("https://images.unsplash.com/photo-1595113316349-9fa4046419ed?auto=format&fit=crop&w=800&q=80")
+            imageUrls = listOf("https://images.unsplash.com/photo-1595113316349-9fa4046419ed?auto=format&fit=crop&w=800&q=80"),
+            createdAt = Timestamp(pastDate)
         ),
         Listing(
             id = "mock_4",
@@ -78,7 +87,8 @@ object MockData {
             badges = listOf("verified_hygiene", "family_friendly"),
             district = "Chikmagalur",
             isPublished = true,
-            imageUrls = listOf("https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=800&q=80")
+            imageUrls = listOf("https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=800&q=80"),
+            createdAt = Timestamp(pastDate)
         ),
         Listing(
             id = "mock_5",
@@ -97,7 +107,8 @@ object MockData {
             badges = listOf("top_host", "family_friendly"),
             district = "Hassan",
             isPublished = true,
-            imageUrls = listOf("https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=800&q=80")
+            imageUrls = listOf("https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=800&q=80"),
+            createdAt = Timestamp(pastDate)
         ),
         Listing(
             id = "mock_6",
@@ -116,7 +127,8 @@ object MockData {
             badges = listOf("home_cooked_food"),
             district = "Vijayanagara",
             isPublished = true,
-            imageUrls = listOf("https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=800&q=80")
+            imageUrls = listOf("https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=800&q=80"),
+            createdAt = Timestamp(pastDate)
         ),
         Listing(
             id = "mock_7",
@@ -135,7 +147,8 @@ object MockData {
             badges = listOf("verified_hygiene", "top_host", "family_friendly"),
             district = "Udupi",
             isPublished = true,
-            imageUrls = listOf("https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=800&q=80")
+            imageUrls = listOf("https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=800&q=80"),
+            createdAt = Timestamp(pastDate)
         ),
         Listing(
             id = "mock_8",
@@ -154,7 +167,8 @@ object MockData {
             badges = listOf("family_friendly"),
             district = "Uttara Kannada",
             isPublished = true,
-            imageUrls = listOf("https://images.unsplash.com/photo-1444858291040-58f756a3bcd6?auto=format&fit=crop&w=800&q=80")
+            imageUrls = listOf("https://images.unsplash.com/photo-1444858291040-58f756a3bcd6?auto=format&fit=crop&w=800&q=80"),
+            createdAt = Timestamp(pastDate)
         ),
         Listing(
             id = "mock_9",
@@ -173,7 +187,8 @@ object MockData {
             badges = listOf("verified_hygiene", "home_cooked_food"),
             district = "Hassan",
             isPublished = true,
-            imageUrls = listOf("https://images.unsplash.com/photo-1544550581-5f7ceaf7f992?auto=format&fit=crop&w=800&q=80")
+            imageUrls = listOf("https://images.unsplash.com/photo-1544550581-5f7ceaf7f992?auto=format&fit=crop&w=800&q=80"),
+            createdAt = Timestamp(pastDate)
         ),
         Listing(
             id = "mock_10",
@@ -192,7 +207,8 @@ object MockData {
             badges = listOf("verified_hygiene", "top_host", "family_friendly", "home_cooked_food"),
             district = "Kodagu",
             isPublished = true,
-            imageUrls = listOf("https://images.unsplash.com/photo-1533062604082-2786d7946914?auto=format&fit=crop&w=800&q=80")
+            imageUrls = listOf("https://images.unsplash.com/photo-1533062604082-2786d7946914?auto=format&fit=crop&w=800&q=80"),
+            createdAt = Timestamp(pastDate)
         )
     )
 }

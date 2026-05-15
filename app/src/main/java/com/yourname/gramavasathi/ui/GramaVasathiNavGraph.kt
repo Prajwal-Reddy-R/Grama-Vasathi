@@ -135,6 +135,7 @@ fun GramaVasathiNavGraph(
                         navController.navigate(Routes.SETTINGS)
                     },
                     onLogout = {
+                        com.google.firebase.auth.FirebaseAuth.getInstance().signOut()
                         navController.navigate(Routes.ROLE_SELECTION) {
                             popUpTo(0) { inclusive = true }
                         }
@@ -228,6 +229,7 @@ fun GramaVasathiNavGraph(
                     navController.navigate(Routes.HOST_AUTH)
                 },
                 onLogout = {
+                    com.google.firebase.auth.FirebaseAuth.getInstance().signOut()
                     navController.navigate(Routes.ROLE_SELECTION) {
                         popUpTo(0) { inclusive = true }
                     }

@@ -16,19 +16,26 @@ class ListingRepository @Inject constructor(
 ) {
     fun getListings(): Flow<List<Listing>> = callbackFlow {
         val listener = firestore.collection("listings")
-            .whereEqualTo("isPublished", true)
             .addSnapshotListener { snapshot, error ->
                 if (error != null) {
                     trySend(MockData.listings)
                     return@addSnapshotListener
                 }
-                val listings = snapshot?.toObjects(Listing::class.java)
-                    ?: emptyList()
+                
+                val listings = try {
+                    snapshot?.toObjects(Listing::class.java) ?: emptyList()
+                } catch (e: Exception) {
+                    emptyList()
+                }
+
+                // Filter for published items in Kotlin to avoid field name mismatch issues in Firestore queries
+                val publishedListings = listings.filter { it.isPublished }
+
                 // Avoid duplicates: filter out any Firestore listings that use mock IDs
                 val mockIds = MockData.listings.map { it.id }.toSet()
-                val realListings = listings.filter { it.id !in mockIds }
+                val realListings = publishedListings.filter { it.id !in mockIds }
                 
-                val result = MockData.listings + realListings
+                val result = (MockData.listings + realListings).sortedByDescending { it.createdAt }
                 trySend(result)
             }
         awaitClose { listener.remove() }
@@ -69,7 +76,8 @@ suspend fun publishListing(listing: Listing): Result<Unit> = runCatching {
 
     val finalListing = listing.copy(
         id = docRef.id,
-        isPublished = true  // always force true
+        isPublished = true,
+        createdAt = com.google.firebase.Timestamp.now()
     )
     docRef.set(finalListing).await()
 }

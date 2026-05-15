@@ -1,6 +1,7 @@
 package com.yourname.gramavasathi.data.model
 
 import com.google.firebase.Timestamp
+import com.google.firebase.firestore.PropertyName
 
 data class Listing(
     val id: String = "",
@@ -21,6 +22,8 @@ data class Listing(
     val badges: List<String> = emptyList(),
     val district: String = "",
     val taluk: String = "",
-    val isPublished: Boolean = false,
+    @get:PropertyName("isPublished")
+    @set:PropertyName("isPublished")
+    var isPublished: Boolean = false,
     val createdAt: Timestamp = Timestamp.now()
 )

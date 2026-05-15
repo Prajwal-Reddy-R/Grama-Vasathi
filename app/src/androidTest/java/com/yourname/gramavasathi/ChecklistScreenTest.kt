@@ -6,6 +6,9 @@ import com.yourname.gramavasathi.ui.host.ChecklistScreen
 import com.yourname.gramavasathi.viewmodel.HostViewModel
 import org.junit.Rule
 import org.junit.Test
+import org.mockito.Mockito.mock
+import com.yourname.gramavasathi.data.repository.ListingRepository
+import com.google.firebase.auth.FirebaseAuth
 
 class ChecklistScreenTest {
 
@@ -14,42 +17,49 @@ class ChecklistScreenTest {
 
     @Test
     fun checklistFlow_updatesScoreAndNavigates() {
-        val viewModel = HostViewModel()
+        // Mock dependencies to fix compilation
+        val listingRepository = mock(ListingRepository::class.java)
+        val auth = mock(FirebaseAuth::class.java)
+        
+        val viewModel = HostViewModel(listingRepository, auth)
         var finishCalled = false
 
         composeTestRule.setContent {
             ChecklistScreen(
                 viewModel = viewModel,
-                onFinish = { finishCalled = true }
+                onFinished = { finishCalled = true },
+                onBack = { }
             )
         }
 
         // 1. Verify initial score is 0
-        composeTestRule.onNodeWithText("0").assertIsDisplayed()
+        composeTestRule.onNodeWithText("0%").assertIsDisplayed()
 
-        // 2. Tap "Done" on first item (Safe Drinking Water - weight 20)
-        // This should update the score display
-        composeTestRule.onNodeWithText("Done").performClick()
+        // 2. Tap "Done" on first item
+        // Note: The UI uses "✓ Done" from strings.xml
+        composeTestRule.onNodeWithText("✓ Done").performClick()
 
-        // 3. Verify score updates to 20
-        composeTestRule.onNodeWithText("20").assertIsDisplayed()
+        // 3. Verify score updates
+        // Safe Drinking Water weight is 20
+        composeTestRule.onNodeWithText("20%").assertIsDisplayed()
 
-        // 4. Tap "Next" to advance to step 2
-        composeTestRule.onNodeWithText("Next").performClick()
+        // 4. Tap "Next" to advance
+        // Note: The UI uses "Next →" from strings.xml
+        composeTestRule.onNodeWithText("Next →").performClick()
 
         // 5. Verify we are on step 2
         composeTestRule.onNodeWithText("Step 2 of 7").assertIsDisplayed()
 
-        // 6. Navigate to the end (currently on step 2, need 5 more clicks)
+        // 6. Navigate to the end
         repeat(5) {
-            composeTestRule.onNodeWithText("Next").performClick()
+            composeTestRule.onNodeWithText("Next →").performClick()
         }
 
-        // 7. Verify "Finish & Score" appears on last step (Step 7)
-        composeTestRule.onNodeWithText("Finish & Score").assertIsDisplayed()
+        // 7. Verify "See My Score →" appears on last step
+        composeTestRule.onNodeWithText("See My Score →").assertIsDisplayed()
 
-        // 8. Tap "Finish & Score" and verify callback
-        composeTestRule.onNodeWithText("Finish & Score").performClick()
+        // 8. Tap "See My Score →" and verify callback
+        composeTestRule.onNodeWithText("See My Score →").performClick()
         assert(finishCalled)
     }
 }

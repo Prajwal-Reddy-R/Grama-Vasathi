@@ -309,25 +309,6 @@ fun HostDashboardScreen(
                                 ) {
                                     Text(stringResource(R.string.remove), fontSize = 12.sp)
                                 }
-                                Button(
-                                    onClick = {
-                                        viewModel.togglePublish(listing)
-                                    },
-                                    colors = ButtonDefaults.buttonColors(
-                                        containerColor = if (listing.isPublished)
-                                            Color(0xFFD85A30)
-                                        else
-                                            Color(0xFF4A7C59)
-                                    )
-                                ) {
-                                    Text(
-                                        text = if (listing.isPublished)
-                                            stringResource(R.string.unpublish)
-                                        else
-                                            stringResource(R.string.publish),
-                                        fontSize = 12.sp
-                                    )
-                                }
                             }
                         }
                     }
